@@ -31,6 +31,5 @@ console.log(newObj);
 
 Object.freeze(newObj);   //it freezes the object, now values cannot be changed
 newObj.id = 7;
-console.log(newObj);
-
+console.log(newObj)
 

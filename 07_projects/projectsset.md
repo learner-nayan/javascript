@@ -2,7 +2,7 @@
 
 ##project link
 
-[Click here](https://dom-project-chaiaurcode-1vtbeb.stackblitz.io/1-colorChanger/index.html)
+[Click here](https://dom-project-chaiaurcode-1vtbeb.stackblitz.io/)
 
 ##project 1 
 

@@ -2,7 +2,7 @@
 
 ##project link
 
-[Click here](https://stackblitz.com/edit/vitejs-vite-cxzdmd?file=index.html&terminal=dev)
+[Click here](https://dom-project-chaiaurcode-1vtbeb.stackblitz.io/1-colorChanger/index.html)
 
 ##project 1 
 

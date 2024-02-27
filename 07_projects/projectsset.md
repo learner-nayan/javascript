@@ -33,3 +33,31 @@ for (button of buttons) {
 
 ```
 
+
+##project 2
+
+```javascript
+const form = document.querySelector('form');
+
+//this usecase will give empty value
+// const height = parseInt(document.querySelector('#height').value)
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const height = parseInt(document.querySelector('#height').value);
+
+  const weight = parseInt(document.querySelector('#height').value);
+
+  const results = document.querySelector('#results');
+
+  if (height == '' || height < 0 || isNaN(height)) {
+    results.innerHTML = 'Please enter valid height';
+  } else if (weight == '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = 'Please enter valid weight';
+  } else {
+    const bmi = (weight / (height / 100) ** 2).toFixed(2);
+    results.innerHTML = `<span>${bmi}</span>`;
+  }
+});
+
+```

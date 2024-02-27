@@ -34,7 +34,7 @@ for (button of buttons) {
 ```
 
 
-##project 2
+##project 3
 
 ```javascript
 const form = document.querySelector('form');

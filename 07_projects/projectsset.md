@@ -61,3 +61,17 @@ form.addEventListener('submit', (e) => {
 });
 
 ```
+
+##project 2
+
+```javascript
+const clock = document.querySelector('#clock');
+
+setInterval(() => {
+  const today = new Date();
+  // const time = today.getMinutes() + ':' + today.getSeconds();
+  const time = today.toLocaleTimeString();
+  clock.innerHTML = `${time}`;
+}, 1000);
+
+```

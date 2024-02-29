@@ -175,7 +175,5 @@ function newGame() {
 
 ##Event Project 
 
-[Event Project Link](https://ominous-space-sniffle-7v7797gwrv6v2xp7v-5500.app.github.dev/08_events/one.html)
-
 [Event Project Code Link](https://github.com/learner-nayan/javascript/blob/main/08_events/one.html)
 

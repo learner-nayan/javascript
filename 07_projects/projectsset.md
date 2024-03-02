@@ -7,6 +7,8 @@
 ##project 1 
 
 ```javascript
+//color changer
+
 const buttons = document.querySelectorAll('.button');
 
 const body = document.querySelector('body');
@@ -34,9 +36,11 @@ for (button of buttons) {
 ```
 
 
-##project 3
+##project 2
 
 ```javascript
+//BMI calculator
+
 const form = document.querySelector('form');
 
 //this usecase will give empty value
@@ -62,9 +66,11 @@ form.addEventListener('submit', (e) => {
 
 ```
 
-##project 2
+##project 3
 
 ```javascript
+//Digital Clock
+
 const clock = document.querySelector('#clock');
 
 setInterval(() => {
@@ -76,9 +82,11 @@ setInterval(() => {
 
 ```
 
-##project 3
+##project 4
 
 ```javascript
+//Guess the number game
+
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt');
@@ -177,3 +185,58 @@ function newGame() {
 
 [Event Project Code Link](https://github.com/learner-nayan/javascript/blob/main/08_events/one.html)
 
+##project 5
+
+```javascript
+//Keyboard key check
+
+document.querySelector('body').addEventListener('keydown', function (e) {
+  console.log(e.key);
+  document.querySelector('.key').innerHTML = `
+  <table>
+    <tr>
+      <th>Key</th>
+      <th>Key Code</th>
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key}</td>
+      <td>${e.keyCode}</td>
+      <td>${e.code}</td>
+    </tr>
+  </table>
+  `;
+});
+
+//keydown
+//keypress
+
+
+```
+
+##project 6
+
+```javascript
+//Unlimited color changer
+
+const hexValue = '0123456789ABCDEF';
+
+const randomColor = () => {
+  let finalColor = '#';
+  for (let i = 0; i < 6; i++) {
+    finalColor += hexValue[Math.floor(Math.random() * 16)];
+  }
+  document.querySelector('body').style.backgroundColor = finalColor;
+};
+
+let colorAction;
+document.querySelector('#start').addEventListener('click', () => {
+  colorAction = setInterval(randomColor, 1000);
+});
+
+document.querySelector('#stop').addEventListener('click', () => {
+  clearInterval(colorAction);
+});
+
+
+```

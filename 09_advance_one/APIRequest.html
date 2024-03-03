@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+
+    <div>
+        <table style="background-color: #D6EEEE; border: 2px solid black; border-radius: 3px; padding: 10px;">
+            <tr>
+              <th>Value</th>
+              <th>State</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><code>0</code></td>
+              <td><code>UNSENT</code></td>
+              <td>Client has been created. <code>open()</code> not called yet.</td>
+            </tr>
+            <tr>
+              <td><code>1</code></td>
+              <td><code>OPENED</codecode></td>
+              <td><code>open()</code> has been called.</td>
+            </tr>
+            <tr>
+                <td><code>2</code></td>
+                <td><code>HEADERS_RECEIVED</code></td>
+                <td><code>send()</code> has been called, and headers and status are available.</td>
+            </tr>
+            <tr>
+                <td><code>3</code></td>
+                <td><code>LOADING</code></td>
+                <td>Downloading; <code>responseText</code> holds partial data.</td>
+            </tr>
+            <tr>
+                <td><code>4</code></td>
+                <td><code>DONE</code></td>
+                <td>The operation is complete.</td>
+            </tr>
+          </table>
+    </div>
+</body>
+<script>
+    // let receivedAPIData;
+    // const xhr = new XMLHttpRequest()
+    // // console.log(xhr.readyState)
+    // xhr.open('GET','https://randomuser.me/api/')
+    // xhr.onreadystatechange = function(){
+    //     if(xhr.readyState === 4){
+    //         receivedAPIData = JSON.parse(this.responseText)
+    //         console.log(receivedAPIData);
+    //         console.log(`${receivedAPIData.results[0].name.title} ${receivedAPIData.results[0].name.first} ${receivedAPIData.results[0].name.last}`);
+    //     }
+    // }
+    // xhr.send()
+
+    const xhr = new XMLHttpRequest()
+    const myGitAPIURL = 'https://api.github.com/users/learner-nayan'
+    xhr.open('GET', myGitAPIURL)
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            const myGitData = JSON.parse(this.responseText)
+            const imageURL = myGitData.avatar_url
+            console.log(imageURL);
+            const username = myGitData.login
+            console.log(username);
+            const image = document.createElement('img')
+            const name = document.createElement('h3')
+            image.setAttribute('src',imageURL)
+            name.innerHTML = username
+
+            const body = document.querySelector('body')
+            body.appendChild(image)
+            body.appendChild(name)
+        }
+    }
+    xhr.send()
+</script>
+</html>
